@@ -8,6 +8,7 @@ public class PlayersMover : MonoBehaviour
 {
     [SerializeField] private float _speed = 5;
     [SerializeField] private float _finalZpositionCoef = 4;
+    [SerializeField] private float _finalXpositionCoef = 135;
     public float Speed { get => _speed; }
     private ObjectPlacer _objectPlacer;
     private GameRules _gameRules;
@@ -52,7 +53,7 @@ public class PlayersMover : MonoBehaviour
         {
             int row = i / columns;
             int column = i % columns;
-            x = _objectPlacer.Objects[i].transform.position.x + row * spacing;
+            x = _finalXpositionCoef + row * spacing;
             y = _objectPlacer.Objects[i].transform.position.y;
             z = _finalZpositionCoef - column * spacing;
             Vector3 pos = new Vector3(x, y, z);

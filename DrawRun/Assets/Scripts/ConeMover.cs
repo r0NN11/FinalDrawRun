@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 public class ConeMover : MonoBehaviour
 {
+    [SerializeField] private float _delay = 1.5f;
     private Vector3 upPosition;
     private Vector3 downPosition;
     private void Awake()
@@ -24,7 +25,7 @@ public class ConeMover : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(_delay);
             Move();
         }
     }

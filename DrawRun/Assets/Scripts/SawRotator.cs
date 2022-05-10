@@ -5,7 +5,9 @@ using DG.Tweening;
 
 public class SawRotator : MonoBehaviour
 {
-    private float _speed = 2f;
+    [SerializeField] private float _rotationSpeed = 2f;
+    [SerializeField] private float _moveDuration = 2f;
+    [SerializeField] private int _loopsNumber = 2;
     [SerializeField] private float _zPos;
     [SerializeField] private float _xPos;
     [SerializeField] private bool _isZMoving;
@@ -34,7 +36,7 @@ public class SawRotator : MonoBehaviour
     }
     private void Update()
     {
-        transform.Rotate(0, 0, 60 * Time.deltaTime * _speed);
+        transform.Rotate(0, 0, 60 * Time.deltaTime * _rotationSpeed);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -47,7 +49,7 @@ public class SawRotator : MonoBehaviour
     }
     private void Move(Vector3 position)
     {
-        transform.DOMove(position, 2f).SetLoops(2, LoopType.Yoyo);
+        transform.DOMove(position, _moveDuration).SetLoops(_loopsNumber, LoopType.Yoyo);
     }
     IEnumerator StartDelay(Vector3 position)
     {

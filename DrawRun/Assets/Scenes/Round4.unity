@@ -14547,6 +14547,11 @@ MonoBehaviour:
   - Round3
   - Round4
   - Round5
+  - Round6
+  - Round7
+  - Round8
+  - Round9
+  - Round10
 --- !u!114 &1216227044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14574,6 +14579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 6
   _finalZpositionCoef: 4
+  _finalXpositionCoef: 135
 --- !u!114 &1216227046
 MonoBehaviour:
   m_ObjectHideFlags: 0
