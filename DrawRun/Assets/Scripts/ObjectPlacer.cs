@@ -16,7 +16,7 @@ public class ObjectPlacer : MonoBehaviour
     {
         _lineConverter = GetComponent<LineConverter>();
         _lineConverter.OnLineConverted.AddListener(PlaceObject);
-        _cameraFollow = Camera.main.GetComponent<CameraFollow>();
+        _cameraFollow = FindObjectOfType<CameraFollow>();
         _playersMover = GetComponent<PlayersMover>();
     }
     private void PlaceObject(Path path)

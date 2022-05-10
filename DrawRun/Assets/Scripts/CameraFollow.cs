@@ -6,10 +6,8 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private GameObject _drawingCamera;
     private float _offset;
     public float Offset { get => _offset; set => _offset = value; }
-    private DrawingCameraMover _drawingCameraMover;
-    private void Start()
+    private void Awake()
     {
-        _drawingCameraMover = FindObjectOfType<DrawingCameraMover>();
         _offset = transform.position.x - _drawingCamera.transform.position.x;
     }
     private void FixedUpdate()

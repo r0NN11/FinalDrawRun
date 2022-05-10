@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
         _objectPlacer = FindObjectOfType<ObjectPlacer>();
         gameObject.GetComponent<BoxCollider>().isTrigger = true;
         _objectPlacer.AddPlayerObject(gameObject);
+        transform.eulerAngles = new Vector3(0, 90, 0);
     }
     public void Death()
     {

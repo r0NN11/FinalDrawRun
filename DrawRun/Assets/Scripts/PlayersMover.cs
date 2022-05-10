@@ -6,7 +6,7 @@ using DG.Tweening;
 [RequireComponent(typeof(ObjectPlacer))]
 public class PlayersMover : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5;
+    [SerializeField] private float _speed = 6;
     [SerializeField] private float _finalZpositionCoef = 4;
     [SerializeField] private float _finalXpositionCoef = 135;
     public float Speed { get => _speed; }

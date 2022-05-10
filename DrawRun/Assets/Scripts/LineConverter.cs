@@ -20,13 +20,18 @@ public class LineConverter : MonoBehaviour
         for (int i = 0; i < fingerPositions.Count; i++)
         {
             Vector3 temp = fingerPositions[i];
-            temp.z = -temp.x * 2.6f;
-            temp.x = temp.y * 2.6f;
+            temp.z = -temp.x * 3f;
+            temp.x = temp.y * 2.5f;
             temp.y = 0.5f;
             worldPositions.Add(temp);
         }
         var path = new Path(worldPositions);
         OnLineConverted.Invoke(path);
+        /*for (int i = 0; i < worldPositions.Count; i++)
+        {
+            Debug.Log(worldPositions[i]);
+        }
+        */
 
     }
 
