@@ -11,10 +11,15 @@ public class PlayerOnPathController : MonoBehaviour
         {
             gameObject.GetComponent<PlayerController>().enabled = true;
             gameObject.GetComponent<PlayerDeathParticle>().enabled = true;
+            gameObject.GetComponent<PlayerOnPathAnimation>().enabled = false;
             gameObject.AddComponent<PlayerAnimation>();
             gameObject.layer = other.gameObject.layer;
             gameObject.GetComponentInChildren<SkinnedMeshRenderer>().sharedMaterials = other.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().sharedMaterials;
             OnCollision.Invoke(other.gameObject.GetComponent<Animator>());
         }
     }
-} // && gameObject.GetComponent<PlayerController>() == null
+    private void OnDestroy()
+    {
+        OnCollision.RemoveAllListeners();
+    }
+}

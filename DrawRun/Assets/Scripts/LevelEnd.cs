@@ -5,13 +5,13 @@ using UnityEngine.Events;
 public class LevelEnd : MonoBehaviour
 {
     public UnityEvent OnRoundFinal { get; private set; } = new UnityEvent();
-    private bool islevelEnd;
+    private bool _islevelEnd;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<PlayerController>() & !islevelEnd)
+        if (other.gameObject.GetComponent<PlayerController>() & !_islevelEnd)
         {
             OnRoundFinal.Invoke();
-            islevelEnd = true;
+            _islevelEnd = true;
         }
     }
     public void EasyWin()

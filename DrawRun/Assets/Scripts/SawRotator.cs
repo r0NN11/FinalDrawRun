@@ -12,6 +12,7 @@ public class SawRotator : MonoBehaviour
     [SerializeField] private float _xPos;
     [SerializeField] private bool _isZMoving;
     [SerializeField] private bool _isXMoving;
+    [SerializeField] private float _zangle = 60;
     private Vector3 zPosition;
     private Vector3 xPosition;
     private Vector3 zxPosition;
@@ -36,7 +37,7 @@ public class SawRotator : MonoBehaviour
     }
     private void Update()
     {
-        transform.Rotate(0, 0, 60 * Time.deltaTime * _rotationSpeed);
+        transform.Rotate(0, 0, _zangle * Time.deltaTime * _rotationSpeed);
     }
     private void OnTriggerEnter(Collider other)
     {

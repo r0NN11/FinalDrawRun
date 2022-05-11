@@ -10,7 +10,6 @@ public class PlayerDeathParticle : MonoBehaviour
     private void Start()
     {
         _playerController = GetComponent<PlayerController>();
-        _objectDamageParticle = GetComponentInChildren<ParticleSystem>();
         _playerController.OnDeathEvent.AddListener(ActivateDamageParticle);
         _playerController.OnFireDeathEvent.AddListener(ActivateFireDeathParticle);
     }

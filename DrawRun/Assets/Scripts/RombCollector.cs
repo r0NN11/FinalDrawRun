@@ -4,7 +4,9 @@ using UnityEngine;
 using DG.Tweening;
 public class RombCollector : MonoBehaviour
 {
-
+    [SerializeField] private float _rombUpPos = 4;
+    [SerializeField] private float _finalrombPosy = 80;
+    [SerializeField] private float _finalrombPosz = -50;
     private bool _isCollided;
     private ScoreManager _scoreManager;
     private void Start()
@@ -25,7 +27,7 @@ public class RombCollector : MonoBehaviour
     }
     private void RombMove()
     {
-        float newYPos = transform.position.y + 4;
+        float newYPos = transform.position.y + _rombUpPos;
         transform.DOMoveY(newYPos, 0.7f);
     }
     IEnumerator DestroyWithDelay()
@@ -33,7 +35,7 @@ public class RombCollector : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.4f);
-            Vector3 newPos = new Vector3(transform.position.x, 80, -50);
+            Vector3 newPos = new Vector3(transform.position.x, _finalrombPosy, _finalrombPosz);
             transform.DOMove(newPos, 0.9f);
             yield return new WaitForSeconds(0.7f);
             Destroy(gameObject);

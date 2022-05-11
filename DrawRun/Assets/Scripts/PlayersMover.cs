@@ -60,5 +60,4 @@ public class PlayersMover : MonoBehaviour
             _objectPlacer.Objects[i].transform.DOMove(pos, 1.3f);
         }
     }
-
 }

@@ -9,7 +9,6 @@ public class MineExplode : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         PlayerController _playerController = other.gameObject.GetComponent<PlayerController>();
-        Rigidbody _playerRigidbody = _playerController.GetComponent<Rigidbody>();
         _explosionParticle = gameObject.GetComponentInChildren<ParticleSystem>();
         if (_playerController)
         {

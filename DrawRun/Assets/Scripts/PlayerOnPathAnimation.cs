@@ -18,5 +18,4 @@ public class PlayerOnPathAnimation : MonoBehaviour
         _animator.runtimeAnimatorController = animator.runtimeAnimatorController;
         _animator.SetTrigger("LevelStart");
     }
-
 }

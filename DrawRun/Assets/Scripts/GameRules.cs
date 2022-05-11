@@ -55,4 +55,10 @@ public class GameRules : MonoBehaviour
         FacebookManager.instance.LevelEnded(_level);
         SaveLevelNum();
     }
+    private void OnDestroy()
+    {
+        OnLevelStart.RemoveAllListeners();
+        OnLevelEnd.RemoveAllListeners();
+        OnGameOver.RemoveAllListeners();
+    }
 }

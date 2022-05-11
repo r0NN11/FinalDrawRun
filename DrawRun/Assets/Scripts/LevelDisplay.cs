@@ -8,7 +8,6 @@ public class LevelDisplay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _levelText;
     [SerializeField] private Image _levelBackground;
     private GameRules _gameRules;
-
     private void Start()
     {
         _gameRules = FindObjectOfType<GameRules>();
@@ -22,5 +21,4 @@ public class LevelDisplay : MonoBehaviour
     {
         _levelBackground.gameObject.SetActive(false);
     }
-
 }
