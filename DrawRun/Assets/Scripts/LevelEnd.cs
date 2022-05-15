@@ -10,12 +10,12 @@ public class LevelEnd : MonoBehaviour
     {
         if (other.gameObject.GetComponent<PlayerController>() & !_islevelEnd)
         {
-            OnRoundFinal.Invoke();
+            OnRoundFinal?.Invoke();
             _islevelEnd = true;
         }
     }
     public void EasyWin()
     {
-        OnRoundFinal.Invoke();
+        OnRoundFinal?.Invoke();
     }
 }

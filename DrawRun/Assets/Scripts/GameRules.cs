@@ -28,7 +28,7 @@ public class GameRules : MonoBehaviour
     {
         if (_objectPlacer.Objects.Count == 0)
         {
-            OnGameOver.Invoke();
+            OnGameOver?.Invoke();
         }
         StartLevel();
     }
@@ -45,12 +45,12 @@ public class GameRules : MonoBehaviour
         if (Input.GetMouseButtonDown(0) & !isLevelStarted)
         {
             isLevelStarted = true;
-            OnLevelStart.Invoke();
+            OnLevelStart?.Invoke();
         }
     }
     private void RoundFinal()
     {
-        OnLevelEnd.Invoke();
+        OnLevelEnd?.Invoke();
         AnalyticsManager.instance.OnLevelComplete(_level);
         FacebookManager.instance.LevelEnded(_level);
         SaveLevelNum();

@@ -24,12 +24,12 @@ public class PlayerController : MonoBehaviour
     }
     public void DeathSeveral()
     {
-        OnDeathEvent.Invoke();
+        OnDeathEvent?.Invoke();
         _objectPlacer.RemoveAndDestroySeveralObjects(gameObject);
     }
     public void FireDeath()
     {
-        OnFireDeathEvent.Invoke();
+        OnFireDeathEvent?.Invoke();
         StartCoroutine(DestroyWithDelay());
     }
     IEnumerator DestroyWithDelay()

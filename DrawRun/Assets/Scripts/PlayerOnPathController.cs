@@ -15,7 +15,7 @@ public class PlayerOnPathController : MonoBehaviour
             gameObject.AddComponent<PlayerAnimation>();
             gameObject.layer = other.gameObject.layer;
             gameObject.GetComponentInChildren<SkinnedMeshRenderer>().sharedMaterials = other.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().sharedMaterials;
-            OnCollision.Invoke(other.gameObject.GetComponent<Animator>());
+            OnCollision?.Invoke(other.gameObject.GetComponent<Animator>());
         }
     }
     private void OnDestroy()

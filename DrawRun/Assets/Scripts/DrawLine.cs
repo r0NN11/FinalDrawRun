@@ -39,7 +39,7 @@ public class DrawLine : MonoBehaviour
             Destroy(_currentLine);
             if (fingerPositions.Count > 5)
             {
-                OnLineDrawn.Invoke(fingerPositions);
+                OnLineDrawn?.Invoke(fingerPositions);
                 fingerPositions.Clear();
             }
             else if (_drawpanel.IsPointerOverUIObject())
